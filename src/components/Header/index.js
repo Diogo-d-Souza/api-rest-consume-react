@@ -1,22 +1,22 @@
 import React from 'react';
 import { FaHome, FaSignInAlt, FaUserAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { Nav } from './styled';
 
 export default function Header() {
   return (
     <Nav>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a href="">
+      <Link to="/">
         <FaHome size={24} />
-      </a>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a href="">
+      </Link>
+
+      <Link to="/login">
         <FaSignInAlt size={24} />
-      </a>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a href="">
+      </Link>
+
+      <Link to="/fdf">
         <FaUserAlt size={24} />
-      </a>
+      </Link>
     </Nav>
   );
 }
