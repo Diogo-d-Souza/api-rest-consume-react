@@ -1,3 +1,5 @@
+import * as types from '../types';
+
 const initialState = {
   buttonClicked: false,
 };
@@ -5,11 +7,23 @@ const initialState = {
 // eslint-disable-next-line default-param-last
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'BUTTON_CLICKED': {
+    case types.BUTTON_CLICKED_SUCCESS: {
+      console.log('Sucesso');
       const newState = { ...state };
       newState.buttonClicked = !newState.buttonClicked;
       return newState;
     }
+
+    case types.BUTTON_CLICKED_FAILURE: {
+      console.log('Erro');
+      return state;
+    }
+
+    case types.BUTTON_CLICKED_REQUEST: {
+      console.log('Request');
+      return state;
+    }
+
     default: {
       return state;
     }
